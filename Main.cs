@@ -68,6 +68,7 @@ namespace Schizo
                 tH = dH;
                 Timing.CallDelayed(Schizo.Singleton.Config.NoVoci, () =>
                 {
+                    if (ev.Player.Role != RoleTypeId.ClassD) return;
                     ev.Player.EnableEffect<Scp1576>(1, 2400, false);
                     tH.Text =tH.Text.Replace("%status%", "sono tornate..");
                     tH.Id = "stopVociSchizo";
